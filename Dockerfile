@@ -10,9 +10,10 @@ RUN mkdir -p /opt/logstation /opt/logstation/conf /opt/logstation/logs
 WORKDIR /opt/logstation
 
 RUN wget https://github.com/jdrews/logstation/releases/download/${VERSION}/logstation-${VERSION}.jar -O logstation.jar
+RUN java -jar logstation.conf
 
 VOLUME [ "/opt/logstation" ]
 EXPOSE 8884
 
-CMD [ "java", "-jar", "logstation.jar", "-c", "/opt/logstation/conf/logstation.conf" ]
+CMD [ "java", "-jar", "logstation.jar" ]
 
