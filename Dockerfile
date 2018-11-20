@@ -1,5 +1,9 @@
 FROM  openjdk:9-jre-slim
+
 LABEL maintainer="saintzyo@gmail.com"
+LABEL org.label-schema.build-date="$(date)"
+LABEL org.label-schema.vcs-url="https://github.com/saintzyo/logstation-docker"
+LABEL org.label-schema.vcs-tool-url="https://github.com/jdrews/logstation"
 
 ARG VERSION=0.3.11
 
@@ -16,4 +20,3 @@ VOLUME [ "/opt/logstation" ]
 EXPOSE 8884
 
 CMD [ "java", "-jar", "logstation.jar" ]
-

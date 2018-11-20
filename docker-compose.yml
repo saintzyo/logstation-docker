@@ -1,0 +1,9 @@
+version: "2"
+services:
+  logstation:
+    image: saintzyo/logstation:0.3.11
+    ports:
+      - 8884:8884
+    volumes:
+      - ./logstation.conf:/opt/logstation/logstation.conf
+      - /var/logs/nginx:/opt/logstation/logs
